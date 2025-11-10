@@ -8,6 +8,7 @@
 }
 
 body {
+ cursor: url('./chika.png') 16 16, auto;
   font-family: "Schoolbell", cursive;
   font-weight: 400;
   font-style: normal;
@@ -75,6 +76,7 @@ section {
 
 /* Hero Section */
 .hero {
+  position: relative; /* allows absolute positioning inside */
   height: 100vh;
   background-color: #f5f1e8;
   display: flex;
@@ -113,6 +115,38 @@ section {
 
 .hero-content button:hover {
   background: #fff;
+}
+
+.hero-bottom-left {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 500px; /* adjust as needed */
+  height: auto;
+  object-fit: contain;
+  z-index: 1;
+  opacity: 0.9; /* subtle effect */
+  transition: all 0.8s ease-out;
+}
+
+/* Optional: subtle fade-up animation on load */
+.hero-bottom-left {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.hero-bottom-left.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-bottom-left {
+    width: 200px;
+    bottom: 10px;
+    left: 10px;
+  }
 }
 
 /* About Section */
