@@ -28,3 +28,12 @@ const observer = new IntersectionObserver(entries => {
 sections.forEach(section => {
   observer.observe(section);
 });
+
+const heroImg = document.querySelector('.hero-bottom-left');
+
+window.addEventListener('scroll', () => {
+  const rect = heroImg.getBoundingClientRect();
+  if (rect.top < window.innerHeight - 100) {
+    heroImg.classList.add('visible');
+  }
+});
