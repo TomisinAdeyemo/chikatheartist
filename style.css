@@ -16,6 +16,10 @@ body {
   overflow-x: hidden;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .navbar {
   position: fixed;
   top: 0;
@@ -29,21 +33,45 @@ body {
   z-index: 1000;
 }
 
-.navbar .logo {
-  font-weight: 700;
-  font-size: 1.5rem;
+/* Logo */
+.navbar .logo img {
+  height: 55px;
+  width: auto;
+  object-fit: contain;
+  cursor: pointer;
 }
 
+/* Links */
 .nav-links a {
   margin-left: 30px;
   text-decoration: none;
   color: #fff;
+  font-weight: 500;
   transition: color 0.3s;
 }
 
 .nav-links a:hover {
   color: #f5c518;
 }
+
+/* Highlight active section */
+.nav-links a.active {
+  color: #f5c518;
+  font-weight: bold;
+}
+
+/* Section styling for demo */
+section {
+  min-height: 100vh;
+  padding: 100px 60px;
+  color: #333;
+}
+
+.nav-links a.active {
+  color: #ff4b00;
+  font-weight: bold;
+}
+
 
 /* Hero Section */
 .hero {
@@ -60,18 +88,6 @@ body {
   color: #1a5239;  
   font-size: 4rem;
   margin-bottom: 15px;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-}
-
-.logo img {
-  height: 60px;   /* adjust as needed */
-  width: auto;
-  object-fit: contain;
-  cursor: pointer;
 }
 
 
