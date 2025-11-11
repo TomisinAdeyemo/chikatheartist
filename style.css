@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
 @import url('https://fonts.cdnfonts.com/css/brik-stang');
+@import url(https://db.onlinewebfonts.com/c/32aac839ec8704951d812018c43e298d?family=TAN+-+Angleton+Regular);
+@import url('https://fonts.cdnfonts.com/css/aston-script');
 
 * {
   margin: 0;
@@ -8,8 +10,7 @@
 }
 
 body {
- cursor: url('./chika.png') 16 16, auto;
-  font-family: "Schoolbell", cursive;
+ font-family: "TAN - Angleton Regular";
   font-weight: 400;
   font-style: normal;
   background: #e8a5c0;
@@ -87,9 +88,14 @@ section {
 }
 
 .hero-content h1 {
+  font-family: 'Aston Script', sans-serif;
   color: #1a5239;  
   font-size: 4rem;
   margin-bottom: 15px;
+}
+
+h1 {
+    font-family: 'Aston Script', sans-serif;
 }
 
 
