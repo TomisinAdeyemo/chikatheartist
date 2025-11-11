@@ -11,8 +11,6 @@
 
 body {
  font-family: "TAN - Angleton Regular";
-  font-weight: 400;
-  font-style: normal;
   background: #e8a5c0;
   color: #f5f1e8;
   overflow-x: hidden;
@@ -96,19 +94,17 @@ section {
 
 h1 {
     font-family: 'Aston Script', sans-serif;
+    font-size: 4rem;
 }
 
 
 .hero-content p {
-   color: #1a5239; 
+  color: #1a5239; 
   font-size: 1.2rem;
   margin-bottom: 25px;
 }
 
 .hero-content button {
-  font-family: "Schoolbell", cursive;
-  font-weight: 400;
-  font-style: normal;
   padding: 12px 25px;
   border: none;
   background: #f5c518;
@@ -324,9 +320,6 @@ h1 {
 
 /* Newsletter bar */
 .newsletter-bar {
-  font-family: "Schoolbell", cursive;
-  font-weight: 400;
-  font-style: normal;
   background: #1a5239;
   color: #f5f1e8;
   display: flex;
@@ -346,9 +339,6 @@ h1 {
 }
 
 .newsletter-form {
-  font-family: "Schoolbell", cursive;
-  font-weight: 400;
-  font-style: normal;
   display: flex;
   align-items: center;
   gap: 15px;
@@ -382,9 +372,6 @@ h1 {
 
 /* Footer main content */
 .footer-content {
-  font-family: "Schoolbell", cursive;
-  font-weight: 400;
-  font-style: normal;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
