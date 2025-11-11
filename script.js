@@ -37,3 +37,19 @@ window.addEventListener('scroll', () => {
     heroImg.classList.add('visible');
   }
 });
+
+// Scroll effect specifically for the info section
+const infoObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+});
+
+const infoSection = document.querySelectorAll('.info-section.hidden');
+infoSection.forEach(el => infoObserver.observe(el));
+
+const hiddenElements = document.querySelectorAll('.hidden');
+hiddenElements.forEach(el => observer.observe(el));
+
