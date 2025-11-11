@@ -74,81 +74,54 @@ section {
 
 
 /* Hero Section */
-.hero {
-  position: relative; /* allows absolute positioning inside */
+
+/* Hero Section */
+.hero-logo {
   height: 100vh;
-  background-color: #f5f1e8;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  padding: 0 20px;
+  background-color: #f5f1e8; /* dark background to enhance glow */
+  overflow: hidden;
 }
 
-.hero-content h1 {
-  font-family: 'Aston Script', sans-serif;
-  color: #1a5239;  
-  font-size: 4rem;
-  margin-bottom: 15px;
+/* Logo Styling */
+.hero-logo .logo {
+  width: 400px; /* adjust size */
+  max-width: 80%;
+  animation: glowPulse 2s infinite alternate;
+  filter: drop-shadow(0 0 15px #f5c518) drop-shadow(0 0 25px #ff4b00);
+  transition: transform 0.3s;
+}
+
+/* Optional hover effect to make logo pop */
+.hero-logo .logo:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 25px #f5c518) drop-shadow(0 0 40px #ff4b00);
+}
+
+/* Glowing animation */
+@keyframes glowPulse {
+  0% {
+    filter: drop-shadow(0 0 10px #f5c518) drop-shadow(0 0 20px #f5c518);
+  }
+  50% {
+    filter: drop-shadow(0 0 20px #f5c518) drop-shadow(0 0 35px #ff4b00);
+  }
+  100% {
+    filter: drop-shadow(0 0 15px #f5c518) drop-shadow(0 0 25px #ff4b00);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-logo .logo {
+    width: 180px;
+  }
 }
 
 h1 {
     font-family: 'Aston Script', sans-serif;
-    font-size: 4rem;
-}
-
-
-.hero-content p {
-  color: #1a5239; 
-  font-size: 1.2rem;
-  margin-bottom: 25px;
-}
-
-.hero-content button {
-  padding: 12px 25px;
-  border: none;
-  background: #f5c518;
-  color: #fff;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 6px;
-  transition: 0.3s;
-}
-
-.hero-content button:hover {
-  background: #fff;
-}
-
-.hero-bottom-left {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  width: 500px; /* adjust as needed */
-  height: auto;
-  object-fit: contain;
-  z-index: 1;
-  opacity: 0.9; /* subtle effect */
-  transition: all 0.8s ease-out;
-}
-
-/* Optional: subtle fade-up animation on load */
-.hero-bottom-left {
-  opacity: 0;
-  transform: translateY(40px);
-}
-
-.hero-bottom-left.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .hero-bottom-left {
-    width: 200px;
-    bottom: 10px;
-    left: 10px;
-  }
 }
 
 /* About Section */
@@ -217,13 +190,6 @@ h1 {
   transition: all 1s ease-in-out;
 }
 
-.text-side h1 {
-  font-size: 3rem;
-  font-weight: 800;
-  line-height: 1.2;
-  text-transform: uppercase;
-}
-
 .text-side .date {
   margin-top: 1.5rem;
   font-weight: 600;
@@ -233,7 +199,7 @@ h1 {
 
 .text-side .desc {
   margin-top: 1rem;
-  font-size: 1.1rem;
+  font-size: .8rem;
   line-height: 1.6;
 }
 
@@ -263,49 +229,6 @@ h1 {
   .text-side h1 {
     font-size: 2rem;
   }
-}
-
-.product-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1px;
-  border: 1px solid #ff5a00;
-}
-
-.product {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #ff5a00;
-  background: #fff;
-  transition: transform 0.3s ease;
-}
-
-.product:hover {
-  transform: translateY(-5px);
-}
-
-.product img {
-  width: 100%;
-  height: auto;
-  border-bottom: 1px solid #ff5a00;
-}
-
-.product-info {
-  text-align: left;
-  padding: 15px;
-  color: #ff5a00;
-}
-
-.product-info h3 {
-  font-size: 0.9rem;
-  letter-spacing: 0.5px;
-  margin-bottom: 8px;
-  text-transform: uppercase;
-}
-
-.product-info span {
-  font-size: 0.9rem;
-  font-weight: 600;
 }
 
 
@@ -480,3 +403,163 @@ h1 {
     padding: 80px 30px;
   }
 }
+
+/* Section Styling */
+.info-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ff5a00; /* red background */
+  color: white;
+  padding: 80px 120px;
+  min-height: 60vh;
+  transition: all 1s ease;
+  opacity: 1;
+}
+
+/* Hidden before scroll */
+.hidden {
+  opacity: 0;
+  transform: translateY(60px);
+}
+
+/* Visible when in view */
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Left Header */
+.info-left h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  max-width: 400px;
+}
+
+/* Right Paragraphs */
+.info-right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 600px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.info-right ul {
+  list-style-type: disc;         /* Adds bullet points */
+  padding-left: 25px;            /* Proper indentation */
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 600px;
+  font-size: .9rem;
+  line-height: 1.8;
+}
+
+.info-right li {
+  margin-bottom: 10px;
+}
+
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .info-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 30px;
+  }
+
+  .info-left h1 {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+  }
+
+  .info-right ul {
+    list-style-position: inside; /* Moves bullets inside text area */
+    padding-left: 0;
+    text-align: left;
+  }
+}
+
+/* Section Background */
+.product-section {
+  background: white;
+  color: black;
+  text-align: center;
+  padding: 80px 40px;
+  transition: all 1s ease;
+}
+
+/* Scroll effect */
+.hidden {
+  opacity: 0;
+  transform: translateY(60px);
+}
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Title */
+.section-title {
+  font-family: 'Aston Script', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 60px;
+}
+
+/* Product layout */
+.product-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+/* Product cards */
+.product-card {
+  max-width: 350px;
+  text-align: left;
+}
+
+.product-card img {
+  width: 100%;
+  height: 400px; /* fixed uniform height */
+  object-fit: cover; /* ensures image fills space without distortion */
+  border-radius: 8px;
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+}
+
+.product-card img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.product-card h3 {
+  font-size: 1.3rem;
+  margin-top: 20px;
+  font-weight: 700;
+}
+
+.product-card p {
+  font-size: 1rem;
+  margin-top: 10px;
+  line-height: 1.6;
+  font-family: "Courier New", monospace;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .product-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-card {
+    max-width: 90%;
+  }
+}
+
